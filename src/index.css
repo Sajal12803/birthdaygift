@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap');
+
+/* Shreya's Birthday - Pastel + Warm Gold Design System */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Soft pastel palette */
+    --background: 330 30% 97%;
+    --foreground: 340 20% 15%;
+
+    --card: 330 40% 98%;
+    --card-foreground: 340 20% 15%;
+
+    --popover: 330 40% 98%;
+    --popover-foreground: 340 20% 15%;
+
+    /* Warm gold primary */
+    --primary: 40 70% 50%;
+    --primary-foreground: 40 10% 98%;
+
+    /* Soft blush pink secondary */
+    --secondary: 340 50% 92%;
+    --secondary-foreground: 340 30% 25%;
+
+    /* Lavender muted */
+    --muted: 270 30% 94%;
+    --muted-foreground: 270 15% 45%;
+
+    /* Soft peach accent */
+    --accent: 20 60% 90%;
+    --accent-foreground: 20 40% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 330 30% 88%;
+    --input: 330 30% 88%;
+    --ring: 40 70% 50%;
+
+    --radius: 1rem;
+
+    /* Custom birthday colors */
+    --gold: 40 80% 55%;
+    --gold-light: 45 85% 75%;
+    --blush: 340 60% 85%;
+    --blush-light: 340 70% 92%;
+    --lavender: 270 50% 85%;
+    --lavender-light: 270 60% 92%;
+    --peach: 20 70% 85%;
+    --cream: 40 40% 96%;
+    --rose: 350 65% 75%;
+    --sage: 140 30% 80%;
+    
+    /* Glassmorphism */
+    --glass-bg: 330 40% 98% / 0.7;
+    --glass-border: 330 30% 95% / 0.5;
+    --glass-shadow: 340 30% 20% / 0.1;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 280 30% 8%;
+    --foreground: 330 30% 95%;
+
+    --card: 280 25% 12%;
+    --card-foreground: 330 30% 95%;
+
+    --popover: 280 25% 12%;
+    --popover-foreground: 330 30% 95%;
+
+    --primary: 40 75% 55%;
+    --primary-foreground: 280 30% 8%;
+
+    --secondary: 340 30% 20%;
+    --secondary-foreground: 340 60% 90%;
+
+    --muted: 280 20% 18%;
+    --muted-foreground: 270 20% 65%;
+
+    --accent: 20 40% 20%;
+    --accent-foreground: 20 60% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 280 20% 20%;
+    --input: 280 20% 20%;
+    --ring: 40 75% 55%;
+
+    --gold: 40 80% 60%;
+    --gold-light: 45 85% 70%;
+    --blush: 340 40% 35%;
+    --blush-light: 340 50% 45%;
+    --lavender: 270 35% 35%;
+    --lavender-light: 270 40% 45%;
+    --peach: 20 50% 35%;
+    --cream: 40 30% 15%;
+    --rose: 350 45% 40%;
+    --sage: 140 20% 30%;
+
+    --glass-bg: 280 30% 12% / 0.8;
+    --glass-border: 280 20% 25% / 0.5;
+    --glass-shadow: 280 30% 5% / 0.3;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--glass-border));
+    box-shadow: 0 8px 32px hsla(var(--glass-shadow));
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-light)) 50%,
+      hsl(var(--gold)) 100%
+    );
+  }
+
+  .gold-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-light)) 50%,
+      hsl(var(--gold)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .pastel-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--blush-light)) 0%,
+      hsl(var(--lavender-light)) 50%,
+      hsl(var(--peach)) 100%
+    );
+  }
+
+  .dreamy-bg {
+    background: 
+      radial-gradient(ellipse at 20% 30%, hsla(var(--blush) / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, hsla(var(--lavender) / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsla(var(--peach) / 0.2) 0%, transparent 60%),
+      hsl(var(--background));
+  }
+
+  .intro-bg {
+    background: 
+      radial-gradient(ellipse at 30% 20%, hsla(280 50% 20% / 0.5) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, hsla(340 40% 15% / 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsla(260 40% 10% / 0.6) 0%, transparent 70%),
+      linear-gradient(180deg, hsl(280 30% 8%) 0%, hsl(260 35% 5%) 100%);
+  }
+
+  .floating-frame {
+    @apply glass-card;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .glow-button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow-button::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(
+      45deg,
+      hsl(var(--gold)),
+      hsl(var(--blush)),
+      hsl(var(--lavender)),
+      hsl(var(--gold))
+    );
+    background-size: 300% 300%;
+    animation: glow-rotate 3s ease infinite;
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+  }
+
+  @keyframes glow-rotate {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+
+  .float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--gold));
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--gold)); }
+  }
+
+  .candle-flicker {
+    animation: flicker 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    25% { opacity: 0.9; transform: scaleY(0.97); }
+    50% { opacity: 0.85; transform: scaleY(1.02); }
+    75% { opacity: 0.95; transform: scaleY(0.98); }
+  }
+
+  .heart-beat {
+    animation: heartbeat 1.2s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+  }
+
+  .petal-fall {
+    animation: petal-fall 10s linear infinite;
+  }
+
+  @keyframes petal-fall {
+    0% { transform: translateY(-10%) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  .butterfly-fly {
+    animation: butterfly 8s ease-in-out infinite;
+  }
+
+  @keyframes butterfly {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(30px, -20px) rotate(10deg); }
+    50% { transform: translate(60px, 0) rotate(-5deg); }
+    75% { transform: translate(30px, 20px) rotate(5deg); }
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
